@@ -8,7 +8,7 @@ export class UserService {
 
   constructor(private router:Router) { }
   registerFN(registerForm:any){
-    var users = JSON.parse(localStorage.getItem('Registered') || '[]')
+    let users = JSON.parse(localStorage.getItem('Registered') || '[]')
     users.push(registerForm)
     localStorage.setItem('Registered',JSON.stringify(users))
   }

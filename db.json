@@ -1,0 +1,22 @@
+{
+  "contacts": [
+    {
+      "contactName": "Aymen Bouazra",
+      "contactEmail": "AymenBouazra@gmail.com",
+      "contactNumber": "24819992",
+      "id": 2
+    },
+    {
+      "contactName": "hatem",
+      "contactEmail": "hatem@gmail.com",
+      "contactNumber": "24598962",
+      "id": 3
+    },
+    {
+      "contactName": "amine",
+      "contactEmail": "amine@gmail.com",
+      "contactNumber": "23654854",
+      "id": 4
+    }
+  ]
+}

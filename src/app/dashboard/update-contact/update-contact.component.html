@@ -1,1 +1,36 @@
-<p>update-contact works!</p>
+<div class="row my-3">
+    <div class="offset-3 col-6">
+        <form [formGroup]="updateContactForm" (ngSubmit)="updateContact()">
+            <h1>Update Contact</h1>
+            <div class="form-group">
+                <label for="contactName">Contact Name</label>
+                <input type="text" class="form-control" placeholder="Contact Name"
+                    formControlName="contactName">
+                <div class="invalid-feedback d-block"
+                    *ngIf="submitted && updateContactForm.controls.contactName.hasError('required')">
+                    Contact Name is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">Email Contact</label>
+                <input type="email" class="form-control"  placeholder="Email Contact here"
+                    formControlName="contactEmail">
+                <div class="invalid-feedback d-block"
+                    *ngIf="submitted && updateContactForm.controls.contactEmail.hasError('required')">
+                    Email Contact is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contactNumber">Phone Number</label>
+                <input type="text" class="form-control"  placeholder="Eg : +216 24 000 000"
+                    formControlName="contactNumber">
+                <div class="invalid-feedback d-block"
+                    *ngIf="submitted && updateContactForm.controls.contactNumber.hasError('required')">
+                    Phone Number is required.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-block"><i class="far fa-save"></i> Update Contact</button>
+            <button type="button" class="btn btn-primary btn-block" routerLink="/dashboard"><i class="fas fa-arrow-left"></i> Cancel</button>
+        </form>
+    </div>
+</div>

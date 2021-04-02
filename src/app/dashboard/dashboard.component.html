@@ -1,18 +1,29 @@
-<table class="table table-stripped offset-1 mb-3">
+<div>
+  <button type="button" class="btn btn-success" routerLink="/dashboard/add-contact"><i class="fas fa-plus"></i> Add Contact</button>
+  <table class="table table-stripped offset-1 mb-3">
     <thead>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Contact Name</th>
         <th scope="col">Email Contact</th>
-        <th scope="col">Mobile Contact</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <th></th>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tbody class="table-hover">
+      <tr *ngFor="let contact of listContact">
+        <th>{{contact.id}}</th>
+        <td>{{contact.contactName}}</td>
+        <td>{{contact.contactEmail}}</td>
+        <td>{{contact.contactNumber}}</td>
+        <td>
+          <button type="button"  class="btn btn-warning " [routerLink]="['/dashboard/update-contact',contact.id]">
+            <i class="far fa-edit"></i> Update
+          </button>
+          <button type="button" class="btn btn-danger" style="color:black!important" (click)="delete(contact.id)"><i class="fa fa-trash"></i> Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
